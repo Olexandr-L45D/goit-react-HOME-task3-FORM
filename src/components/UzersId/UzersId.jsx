@@ -2,11 +2,11 @@
 import { useId } from 'react';
 // з одним ідентифікатором на одному лейбел
 // const MyComponent = () => {
-//     const id = useId();
+//     const loginId = useId();
 
 //     return (
 //         <div>
-//             <label htmlFor={id}>Text field label</label>
+//             <label htmlFor={loginId}>Text field label</label>
 //             <input type="text" id={id} />
 //         </div>
 //     );
@@ -28,3 +28,5 @@ export default function LoginForm3() {
         </form>
     );
 };
+
+// атрибутом htmlFor, допомагає асистивним технологіям, зв'язуючи поле і label за ідентифікатором.

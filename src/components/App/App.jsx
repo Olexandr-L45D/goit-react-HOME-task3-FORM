@@ -5,16 +5,19 @@ import Description from "../Description/Description"
 import LoginForm from "../Form/Form"
 import LoginFormSecond from "../FormSecond/FormSecond"
 import LoginForm3 from "../UzersId/UzersId"
+import PasswordField from "../Password/Password"
+import SearchBar from "../SearchBar/SearchBar"
+import { LangSwitcher } from "../LangSwitcher/LangSwitcher";
 
 export default function App() {
-
+  const [lang, setLang] = useState("uk");
   const [clicks, setValues] = useState(() => {
     const savClicks = window.localStorage.getItem("m-click");
     return savClicks !== null ? JSON.parse(savClicks) : 0;
   });
   const handleLogin = (log) => {
     // Виконуємо необхідні операції з даними
-    // return onLogin;
+    // return 
     console.log(log);
 
   };
@@ -30,11 +33,18 @@ export default function App() {
         <LoginForm />
         <LoginFormSecond onLogin={handleLogin} />
         <LoginForm3 />
+        <PasswordField />
+        <SearchBar />
+        <>
+          <p>Selected language: {lang}</p>
+          <LangSwitcher value={lang} onSelect={setLang} />
+        </>
       </>
 
     </div>
   )
 }
+
 
 // Колбек-функція для обробки сабміту форми
 // const handleLogin = (userData) => {
